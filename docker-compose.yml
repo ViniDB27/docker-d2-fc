@@ -37,7 +37,7 @@ services:
       - "3306:3306"
     volumes: 
       - ./mysql:/var/lib/mysql
-      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+      - ./mysql/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     environment: 
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=root
