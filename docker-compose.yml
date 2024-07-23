@@ -36,7 +36,6 @@ services:
     ports:
       - "3306:3306"
     volumes: 
-      - ./mysql:/var/lib/mysql
       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     environment: 
       - MYSQL_DATABASE=nodedb
