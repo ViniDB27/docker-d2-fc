@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     image: viniciosdb/node
     container_name: app
+    volumes:
+      - ./node:/usr/src/app
     networks: 
       - node-network
     tty: true
@@ -36,6 +38,7 @@ services:
     ports:
       - "3306:3306"
     volumes: 
+      - ./mysql:/var/lib/mysql
       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     environment: 
       - MYSQL_DATABASE=nodedb
@@ -47,3 +50,10 @@ services:
 networks: 
   node-network:
     driver: bridge    
+
+volumes:
+  mysql:
+    driver: local
+  app:
+    driver: local
+  

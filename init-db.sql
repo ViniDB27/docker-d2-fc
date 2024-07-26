@@ -4,3 +4,5 @@ CREATE TABLE IF NOT EXISTS people (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255)
 );
+
+SELECT * FROM nodedb.people;
